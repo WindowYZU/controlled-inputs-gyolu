@@ -9,6 +9,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.WindowConstants;
 
@@ -28,7 +29,9 @@ public class Combobox1 {
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         //create JComboBox and add 0~99 to the combobox
-        
+        JScrollPane scrollPane = new JScrollPane();
+        JList list = new JList(new String[]{"x","d","s"});
+        frame.add(scrollPane);
         ///////////////////////////////////////////////
         
         frame.setVisible(true);
