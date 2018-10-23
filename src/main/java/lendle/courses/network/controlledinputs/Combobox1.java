@@ -33,7 +33,10 @@ public class Combobox1 {
         JList list = new JList(new String[]{"x","d","s"});
         frame.add(scrollPane);
         ///////////////////////////////////////////////
-        
+        JComboBox<String> combox = new JComboBox<String>();
+        for(int i = 0;i<=99;i++)
+            combox.addItem(""+i);
+        frame.add(combox);
         frame.setVisible(true);
     }
     

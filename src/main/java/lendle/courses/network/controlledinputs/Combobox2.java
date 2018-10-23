@@ -42,6 +42,11 @@ public class Combobox2 extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jComboBox1);
 
         jButton1.setText("ADD");
@@ -54,6 +59,15 @@ public class Combobox2 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
+        jList1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jList1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -63,10 +77,19 @@ public class Combobox2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String item = (String)jComboBox1.getSelectedItem();
         DefaultListModel model=(DefaultListModel) jList1.getModel();
         model.addElement(jComboBox1.getSelectedItem());
         jList1.updateUI();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jList1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jList1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jList1AncestorAdded
 
     /**
      * @param args the command line arguments
